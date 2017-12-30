@@ -1,0 +1,68 @@
+body {
+  font: normal 14px , sans-serif;
+}
+
+html,
+body,
+.container, 
+.map {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.nav-pane {
+  font: sans-serif;
+  font-size: 12px;
+}
+
+.results {
+  font-size: 14px;
+}
+.recommend-title {
+  font-size: 14px;
+  font-style: italic;
+}
+
+.te-logo {
+    height: 90px;
+    width: 120px;
+    padding: 5px;
+}
+
+.search-box {
+  padding: 0px;
+  margin-right: 1em;
+}
+
+.text-container {
+  padding-left: 15px;
+}
+
+/* InfoWindow Styles */
+
+
+.4S-Title {
+  font-size: 48px;
+}
+
+.info-window-title {
+  font-size: 24px;  
+}
+
+.content-comments {
+  font-style: italic;
+  color: blue;
+}
+
+.map {
+  position: relative;
+  height: 100vh;
+}
+
+.4S-Data {
+  padding: 0;
+  margin: 0;
+  color: green;
+  font-size: 48px;
+}
