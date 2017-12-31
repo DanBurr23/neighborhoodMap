@@ -44,9 +44,10 @@ var ViewModel = function() {
 		} else {
 			return ko.utils.arrayFilter(self.lunchSpotList(), function(lunchSpotItem) {
 				var string = lunchSpotItem.name.toLowerCase();
-				var result = (string.search(filter) >= 0);
-				lunchSpotItem.visible(result);
+        var result = (string.search(filter) >= 0);
+        lunchSpotItem.visible(result);
 				return result;
+        self.marker.visible(false);
 			});
 		}
 	}, self);
@@ -94,6 +95,7 @@ var LunchSpot = function(data) {
     }).fail(function() {
        console.log("Call to foursquare API failed");
        self.url = "no data retrieved";
+       self.menuUrl = "no data retrieved";
        self.address = "no data retrieved";
        self.menuUrl = "no data retrieved";
     });
@@ -106,6 +108,15 @@ var LunchSpot = function(data) {
       map: map,
       title: data.name
   });
+
+  this.showMarker = ko.computed(function() {
+    if(this.visible() === true) {
+      this.marker.setMap(map);
+    } else {
+      this.marker.setMap(null);
+    }
+    return true;
+  }, this);
 
   this.marker.addListener('click', function(){
     self.contentString = '<div><div class="info-window-title"><b>' + data.name + '</b></div>' + '</br>' +
@@ -126,19 +137,29 @@ var LunchSpot = function(data) {
     }, 2100);
 
     //if they click somewhere else on the map, close the info window
-    map.addListener("click", function(){
-      self.infoWindow.close();
-    });
+    //map.addListener("click", function(){
+    //  self.infoWindow.close();
+    //});
   });
   
   //this function is bound to the html when they click on an item in the list
   this.bounce = function(place) {
     google.maps.event.trigger(self.marker, 'click');
   };
+
+  //if they click somewhere else on the map, close the info window
+    map.addListener("click", function(){
+      self.infoWindow.close();
+    });
 };
 
 // Kick everything off!
 function launchApp() {
   console.log("launching app");
 	ko.applyBindings(new ViewModel());
+}
+
+
+function errorHandling() {
+  alert("There was a problem loading google maps. Please try again later");
 }

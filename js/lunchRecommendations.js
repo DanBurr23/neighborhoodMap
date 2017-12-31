@@ -31,12 +31,6 @@ var lunchSpots = [
 		  comments: 'Good wings, lots of TVs. Good for happy hour with a large group. - Carolyn G.'
     },
     {
-      name : 'Jimmy Johns Sandwiches',
-      lat : 37.763026,
-      lng : -121.952272,
-		  comments: 'Basic sandwiches, but well made and very quick service. - Stan W.'
-    },
-    {
       name : 'Baja Fresh',
       lat : 37.761653,
       lng : -121.961658,
