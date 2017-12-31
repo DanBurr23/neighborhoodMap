@@ -97,7 +97,7 @@ var LunchSpot = function(data) {
        self.url = "no data retrieved";
        self.menuUrl = "no data retrieved";
        self.address = "no data retrieved";
-       self.menuUrl = "no data retrieved";
+       self.menuString = "no data retrieved";
     });
 
   this.infoWindow = new google.maps.InfoWindow({content: self.contentString});
