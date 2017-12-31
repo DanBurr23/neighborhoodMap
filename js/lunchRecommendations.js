@@ -49,6 +49,12 @@ var lunchSpots = [
 		  comments: 'Have to try it if this is your first time in California. - Scott F.'
     },
     {   
+      name : 'Chipotle',
+      lat : 37.775133,
+      lng : -121.978008,
+      comments: 'They\'ve gotten bad publicity lately, but their burrito bowls are awesome! - Stan W.'
+    },
+    {   
       name : 'Zachary\'s Pizza',
       lat : 37.777801,
       lng : -121.972507,
